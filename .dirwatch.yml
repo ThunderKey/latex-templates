@@ -1,0 +1,8 @@
+defaults:
+  interval: 1
+
+latex:
+  file_match: '*.{tex,bib}'
+  script:
+    - ./bin/build_pdf.sh test
+    - evince test.pdf &
