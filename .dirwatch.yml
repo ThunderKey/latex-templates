@@ -2,7 +2,7 @@ defaults:
   interval: 1
 
 latex:
-  file_match: '*.{tex,bib}'
+  file_match: '*.{tex,bib,cls}'
   script:
-    - ./bin/build_pdf.sh test
-    - evince test.pdf &
+    - ./bin/build_pdf.sh examples/thesis/hsr/example
+    - evince examples/thesis/hsr/example.pdf &
