@@ -229,6 +229,73 @@
   \global\let\and\relax
   \cleardoublepage
 }
+
+\newcommand{\quotepage}[2]{
+  \pagestyle{empty}  % No headers or footers for the following pages
+
+  \null\vfill
+  % Now comes the "Funny Quote", written in italics
+  \textit{``#1''}
+
+  \begin{flushright}
+    #2
+  \end{flushright}
+
+  \vfill\vfill\vfill\vfill\vfill\vfill\null
+  \clearpage  % Funny Quote page ended, start a new page
+}
+\newcommand{\abstractpage}[1]{
+  % The Abstract Page
+  \addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+  \abstract{
+    \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+    #1
+  }
+
+  \clearpage  % Abstract ended, start a new page
+}
+\newcommand{\acknowledgementspage}[1]{
+  % The Acknowledgements page, for thanking everyone
+  \acknowledgements{
+    \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+    #1
+  }
+  \clearpage  % End of the Acknowledgements
+}
+\newcommand{\tableofcontentspage}[0]{
+  \lhead{\emph{Contents}}  % Set the left side page header to "Contents"
+  \tableofcontents  % Write out the Table of Contents
+}
+\newcommand{\listoffigurespage}[0]{
+  \lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
+  \listoffigures  % Write out the List of Figures
+}
+\newcommand{\listoftablespage}[0]{
+  \lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
+  \listoftables  % Write out the List of Tables
+}
+\newcommand{\listofabbreviations}[1]{
+  \setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+
+  \lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+  \listofsymbols{ll}{ % Include a list of Abbreviations (a table of two columns)
+    #1
+  }
+
+  \setstretch{1.3}  % Return the line spacing back to 1.3
+  \clearpage  % Start a new page
+}
+\newcommand{\symbolspage}[1]{
+  \setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+
+  \lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
+  \listofnomenclature{lll}{  % Include a list of Symbols (a three column table)
+    #1
+  }
+
+  \setstretch{1.3}  % Return the line spacing back to 1.3
+}
+
 \newenvironment{abstract}
 {
   \btypeout{Abstract Page}
@@ -375,5 +442,6 @@
   \btypeout{\bibname}
   \@mainmatterfalse}
 \endinput
+
 %%
 %% End of file `thesis/HSR.cls'.
