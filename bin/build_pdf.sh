@@ -19,7 +19,7 @@ if [[ "$DIRECTORY" != "." ]]; then
 fi
 
 build_pdf() {
-  pdflatex $FILE_NAME -interaction=nonstopmode -halt-on-error
+  pdflatex -interaction=nonstopmode -halt-on-error $FILE_NAME
 }
 
 build_bib() {
