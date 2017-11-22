@@ -31,7 +31,8 @@
 
 \pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
-%% ----------------------------------------------------------------
+\onecolumn
+
 \declarationpage
 
 \quotepage{
@@ -69,7 +70,8 @@
 
 \dedicationpage{For/Dedicated to/To my\ldots}
 
-%% ----------------------------------------------------------------
+\twocolumn
+
 \mainmatter    % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
@@ -129,6 +131,8 @@ We worked hard, and achieved very little.
 \backmatter
 
 %% ----------------------------------------------------------------
+\onecolumn
+
 \label{Bibliography}
 \bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
 \bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
