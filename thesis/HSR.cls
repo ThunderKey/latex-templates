@@ -14,6 +14,17 @@
 \ProcessOptions\relax
 \LoadClass{\baseclass}
 
+\def\logowidth{10em}
+\def\logoheight{10em / 214 * 71}
+
+\setlength{\headheight}{\logoheight}
+\updatetextdimensions
+
+\rightheader{
+  \def\svgwidth{\logowidth}
+  \input{thesis/logo_hsr.pdf_tex}
+}
+
 \university  {\texorpdfstring{\href{https://www.hsr.ch/de/}
                 {HSR Hochschule für Technik Rapperswil}}
                 {HSR Hochschule für Technik Rapperswil}}

@@ -15,7 +15,8 @@
   \@tempswafalse
   \@tfor\@this:=#2\do{
     \@expandtwoargs\in@{,\@this,}{,\@curroptions,}
-    \ifin@ \@tempswatrue \@break@tfor \fi}
+    \ifin@ \@tempswatrue \@break@tfor \fi
+  }
   \let\@this\@empty
   \if@tempswa \else \PassOptionsToClass{#1}{\baseclass}\fi
 }
@@ -30,35 +31,42 @@
 
 \newcommand\Declaration[1]{
   \btypeout{Declaration of Authorship}
-\addtotoc{Declaration of Authorship}
-\thispagestyle{plain}
-\null\vfil
-%\vskip 60\p@
-\begin{center}{\huge\bf Declaration of Authorship\par}\end{center}
+  \addtotoc{Declaration of Authorship}
+  \thispagestyle{plain}
+  \null\vfil
+  %\vskip 60\p@
+  \begin{center}{\huge\bf Declaration of Authorship\par}\end{center}
   %\vskip 60\p@
   {\normalsize #1}
-\vfil\vfil\null
-%\cleardoublepage
+  \vfil\vfil\null
+  %\cleardoublepage
 }
 
 \newcommand\btypeout[1]{\bhrule\typeout{\space #1}\bhrule}
-\def\today{\ifcase\month\or
-  January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or December\fi
-  \space \number\year}
+\def\today{
+  \ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December
+  \fi
+  \space \number\year
+}
 \usepackage{setspace}
 \onehalfspacing
+
+\usepackage{calc}
 \setlength{\parindent}{2ex}
 \setlength{\parskip}{0pt}
-\usepackage{vmargin}
-\setmarginsrb           { 1.00in}  % left margin
-                        { 0.60in}  % top margin
-                        { 1.00in}  % right margin
-                        { 0.60in}  % bottom margin
-                        {20.00pt}  % head height
-                        { 0.25in}  % head sep
-                        { 9.00pt}  % foot height
-                        { 0.30in}  % foot sep
+\setlength{\topmargin}{0pt}
+\setlength{\oddsidemargin}{0pt} % right margin (+ 1 inch)
+\setlength{\marginparwidth}{1in} % margin notes
+\setlength{\headheight}{0.3in}
+\setlength{\footskip}{0.5in}
+\newcommand{\updatetextdimensions}{
+  \setlength{\textwidth}{\paperwidth - \marginparwidth - 2in - \voffset - \voffset}
+  \setlength{\textheight}{\paperheight - \topmargin - 2in - \topmargin - \headheight - \headsep - \footskip - \hoffset - \hoffset}
+}
+\updatetextdimensions
+
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
 \doublehyphendemerits=10000       % No consecutive line hyphens.
@@ -66,10 +74,33 @@
 \widowpenalty=9999                % Almost no widows at bottom of page.
 \clubpenalty=9999                 % Almost no orphans at top of page.
 \interfootnotelinepenalty=9999    % Almost never break footnotes.
+
+%---------------------------
 \usepackage{fancyhdr}
-\lhead[\rm\thepage]{\fancyplain{}{\sl{\rightmark}}}
-\rhead[\fancyplain{}{\sl{\leftmark}}]{\rm\thepage}
-\chead{}\lfoot{}\rfoot{}\cfoot{}
+
+% Header helpers
+\newcommand{\leftheader}[1]{\def\leftheadervalue{#1}}
+\newcommand{\rightheader}[1]{\def\rightheadervalue{#1}}
+\newcommand{\centerheader}[1]{\def\centerheadervalue{#1}}
+\newcommand{\leftfooter}[1]{\def\leftfootervalue{#1}}
+\newcommand{\rightfooter}[1]{\def\rightfootervalue{#1}}
+\newcommand{\centerfooter}[1]{\def\centerfootervalue{#1}}
+
+\leftheader{\rightmark}
+\centerheader{}
+\rightheader{}
+\leftfooter{}
+\centerfooter{\thepage}
+\rightfooter{}
+
+\lhead[\rightheadervalue]{\leftheadervalue}
+\chead{\centerheadervalue}
+\rhead[\leftheadervalue]{\rightheadervalue}
+\lfoot[\rightfootervalue]{\leftfootervalue}
+\cfoot{\centerfootervalue}
+\rfoot[\leftfootervalue]{\rightfootervalue}
+%---------------------------
+
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\btypeout{\thechapter\space #1}\markboth{\@chapapp\ \thechapter\ #1}{\@chapapp\ \thechapter\ #1}}
 \renewcommand{\sectionmark}[1]{}
@@ -207,20 +238,14 @@
     I, \authornames, declare that this thesis titled, `\@title' and the work presented in it are my own. I confirm that:
 
     \begin{itemize}
-      \item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
-
-      \item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
-
-      \item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
-
-      \item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
-
-      \item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
-
-      \item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-        \\
+      \renewcommand\labelitemi{\tiny{$\blacksquare$}}
+      \item This work was done wholly or mainly while in candidature for a research degree at this University.
+      \item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+      \item Where I have consulted the published work of others, this is always clearly attributed.
+      \item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+      \item I have acknowledged all main sources of help.
+      \item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
     \end{itemize}
-
 
     Signed:\\
     \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
@@ -263,21 +288,17 @@
   \clearpage  % End of the Acknowledgements
 }
 \newcommand{\tableofcontentspage}[0]{
-  \lhead{\emph{Contents}}  % Set the left side page header to "Contents"
   \tableofcontents  % Write out the Table of Contents
 }
 \newcommand{\listoffigurespage}[0]{
-  \lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
   \listoffigures  % Write out the List of Figures
 }
 \newcommand{\listoftablespage}[0]{
-  \lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
   \listoftables  % Write out the List of Tables
 }
 \newcommand{\listofabbreviations}[1]{
   \setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
 
-  \lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
   \listofsymbols{ll}{ % Include a list of Abbreviations (a table of two columns)
     #1
   }
@@ -288,7 +309,6 @@
 \newcommand{\symbolspage}[1]{
   \setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
 
-  \lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
   \listofnomenclature{lll}{  % Include a list of Symbols (a three column table)
     #1
   }
@@ -336,7 +356,8 @@
 \newcounter{dummy}
 \newcommand\addtotoc[1]{
   \refstepcounter{dummy}
-\addcontentsline{toc}{chapter}{#1}}
+  \addcontentsline{toc}{chapter}{#1}
+}
 \renewcommand\tableofcontents{
   \btypeout{Table of Contents}
   \begin{spacing}{1}{

@@ -29,11 +29,6 @@
 
 \setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
 
-% Define the page headers using the FancyHdr package and set up for one-sided printing
-\fancyhead{}  % Clears all page headers and footers
-\rhead{\thepage}  % Sets the right side header to show the page number
-\lhead{}  % Clears the left side page header
-
 \pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
 %% ----------------------------------------------------------------
@@ -95,11 +90,12 @@
 
 %\input{Chapters/Chapter7} % Conclusion
 
-\lhead{\emph{Introduction}}
 \chapter{Introduction}
 This is time for all good men to come to the aid of their party!
 
-\section{Test Sontent}\label{test section}
+\section{Test Section}\label{test section}
+\Blindtext
+\Blindtext
 \Blindtext
 
 \subsection{Previous work}\label{previous work}
@@ -134,7 +130,6 @@ We worked hard, and achieved very little.
 
 %% ----------------------------------------------------------------
 \label{Bibliography}
-\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
 \bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
 \bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
 
