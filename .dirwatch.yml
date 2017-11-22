@@ -1,8 +1,13 @@
 defaults:
   interval: 1
 
-latex:
+latex_thesis_extended:
   file_match: '*.{tex,bib,cls}'
   script:
     - ./bin/build_pdf.sh examples/thesis/hsr/example
     - evince examples/thesis/hsr/example.pdf &
+latex_thesis_simple:
+  file_match: '*.{tex,bib,cls}'
+  script:
+    - ./bin/build_pdf.sh examples/thesis/hsr/simple
+    - evince examples/thesis/hsr/simple.pdf &

@@ -5,7 +5,7 @@
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{thesis/HSR}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 \graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
-\usepackage[english]{babel}
+\usepackage[german]{babel}
 
 % Include any extra LaTeX packages required
 \usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
@@ -15,10 +15,9 @@
 
 %% ----------------------------------------------------------------
 \begin{document}
-\frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Thesis Title}
+\title  {Arbeitstitel}
 \authors    {\texorpdfstring{\href{hans.muster@test.ch}{Author Name}}{Author Name}}
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
 \date       {\today}
@@ -32,46 +31,7 @@
 
 \pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
-\onecolumn
-
-\declarationpage
-
-\quotepage{
-  Write a funny quote here.
-}{
-  If the quote is taken from someone, their name goes here
-}
-
-\abstractpage{
-  The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
-}
-
-\acknowledgementspage{
-  The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
-}
-
 \tableofcontentspage
-
-\listoffigurespage
-
-\listoftablespage
-
-\listofabbreviations{
-  % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-  \textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
-}
-
-\symbolspage{
-  % symbol & name & unit \\
-  $a$ & distance & m \\
-  $P$ & power & W (Js$^{-1}$) \\
-  & & \\ % Gap to separate the Roman symbols from the Greek
-  $\omega$ & angular frequency & rads$^{-1}$ \\
-}
-
-\dedicationpage{For/Dedicated to/To my\ldots}
-
-\twocolumn
 
 \mainmatter    % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
@@ -93,23 +53,18 @@
 
 %\input{Chapters/Chapter7} % Conclusion
 
-\chapter{Introduction}
-This is time for all good men to come to the aid of their party!
+\chapter{Einleitung}
+\blindtext
 
-\section{Test Section}\label{test section}
+\section{Test Teil}\label{test section}
 \Blindtext
 \Blindtext
 \Blindtext
 
-\subsection{Previous work}\label{previous work}
-You might want to read more from Einstein~\cite{Einstein}.
-
-\chapter{Results}\label{results}
-In this section we describe the results.
+\chapter{Resultate}\label{results}
 \Blindtext
 
-\chapter{Conclusions}\label{conclusions}
-We worked hard, and achieved very little.
+\chapter{Fazit}\label{conclusions}
 \Blindtext
 
 %% ----------------------------------------------------------------
@@ -125,18 +80,9 @@ We worked hard, and achieved very little.
 
 %\input{Appendices/AppendixC} % Appendix Title
 
-\chapter{An Appendix}
+\chapter{Ein Anhang}
 \Blindtext
 
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
-\backmatter
-
 %% ----------------------------------------------------------------
-\onecolumn
-
-\label{Bibliography}
-\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
-
 \end{document}  % The End
 %% ----------------------------------------------------------------
