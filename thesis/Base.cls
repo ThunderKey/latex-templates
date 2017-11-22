@@ -58,7 +58,7 @@
 \setlength{\parskip}{0pt}
 \setlength{\topmargin}{0pt}
 \setlength{\oddsidemargin}{0pt} % right margin (+ 1 inch)
-\setlength{\marginparwidth}{1in} % margin notes
+\setlength{\marginparwidth}{0.5in} % margin notes
 \setlength{\headheight}{0.3in}
 \setlength{\footskip}{0.5in}
 \newcommand{\updatetextdimensions}{
@@ -101,8 +101,16 @@
 \rfoot[\leftfootervalue]{\rightfootervalue}
 %---------------------------
 
+% set spacing for the chapters
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{10pt}{20pt}
+
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\btypeout{\thechapter\space #1}\markboth{\@chapapp\ \thechapter\ #1}{\@chapapp\ \thechapter\ #1}}
+\renewcommand{\chaptermark}[1]{
+  \btypeout{\thechapter\space #1}
+  \markboth{\@chapapp\ \thechapter\ #1}{\@chapapp\ \thechapter\ #1}
+}
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
