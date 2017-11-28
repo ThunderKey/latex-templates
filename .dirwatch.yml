@@ -4,10 +4,15 @@ defaults:
 latex_thesis_extended:
   file_match: '*.{tex,bib,cls}'
   script:
-    - ./bin/build_pdf.sh examples/thesis/hsr/example
-    - evince examples/thesis/hsr/example.pdf &
+    - ./bin/build_pdf.sh examples/thesis/hsr/extended
+    - evince examples/thesis/hsr/extended.pdf &
 latex_thesis_simple:
   file_match: '*.{tex,bib,cls}'
   script:
     - ./bin/build_pdf.sh examples/thesis/hsr/simple
     - evince examples/thesis/hsr/simple.pdf &
+latex_report_extended:
+  file_match: '*.{tex,bib,cls}'
+  script:
+    - ./bin/build_pdf.sh examples/report/hsr/extended
+    - evince examples/report/hsr/extended.pdf &
