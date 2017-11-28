@@ -1,5 +1,5 @@
 %%
-%% This is file `Thesis.cls', based on 'ECSthesis.cls', by Steve R. Gunn
+%% This is file `thesis/HSR.cls', based on 'ECSthesis.cls', by Steve R. Gunn
 %% generated with the docstrip utility.
 %%
 %% Created by Steve R. Gunn, modified by Sunil Patel: www.sunilpatel.co.uk
@@ -14,41 +14,9 @@
 \ProcessOptions\relax
 \LoadClass{\baseclass}
 
-\def\logowidth{10em}
-\def\logoheight{10em / 214 * 71}
+\input{shared/hsr_header}
 
-\setlength{\headheight}{\logoheight}
-\updatetextdimensions
-
-\rightheader{
-  \def\svgwidth{\logowidth}
-  \input{thesis/logo_hsr.pdf_tex}
-}
-
-\university  {\texorpdfstring{\href{https://www.hsr.ch/de/}
-                {HSR Hochschule für Technik Rapperswil}}
-                {HSR Hochschule für Technik Rapperswil}}
-\UNIVERSITY  {\texorpdfstring{\href{https://www.hsr.ch/de/}
-                {HSR HOCHSCHULE FÜR TECHNIK RAPPERSWIL}}
-                {HSR HOCHSCHULE FÜR TECHNIK RAPPERSWIL}}
-\department  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {Department or School Name}}
-                {Department or School Name}}
-\DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-\group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {Research Group Name}}
-                {Research Group Name}}
-\GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-\faculty     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {Faculty Name}}
-                {Faculty Name}}
-\FACULTY     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
+\input{shared/hsr_variables}
 
 %%%
 %%% End of file `thesis/HSR.cls'.
