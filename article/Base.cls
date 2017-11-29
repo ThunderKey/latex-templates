@@ -26,3 +26,28 @@
 \LoadClass{\baseclass}
 
 \input{shared/setup_page}
+
+% Title Page
+\def\@maketitle{%
+  \hypersetup{pdftitle={\@title}}
+  \hypersetup{pdfsubject=\subjectname}
+  \hypersetup{pdfauthor=\authornames}
+  \hypersetup{pdfkeywords=\keywordnames}
+  \newpage
+  \null
+  \vskip 2em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1.5em%
+    {\large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \authornames
+      \end{tabular}\par}%
+    \vskip 1em%
+    {\large \@date}%
+  \end{center}%
+  \par
+  \vskip 4em
+}

@@ -145,50 +145,6 @@
 \addresses   {}
 \subject     {}
 \keywords    {}
-\renewcommand\maketitle{
-  \btypeout{Title Page}
-  \hypersetup{pdftitle={\@title}}
-  \hypersetup{pdfsubject=\subjectname}
-  \hypersetup{pdfauthor=\authornames}
-  \hypersetup{pdfkeywords=\keywordnames}
-  \thispagestyle{empty}
-  \begin{titlepage}
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \let \footnote \thanks
-    \setcounter{footnote}{0}
-    \null\vfil
-    \vskip 60\p@
-    \begin{center}
-      \setlength{\parskip}{0pt}
-      {\large\textbf{\UNIVNAME}\par}
-      \vfill
-      {\huge \bf \@title \par}
-      \vfill
-      {\LARGE by \par}
-      \smallskip
-      {\LARGE \authornames \par}
-      \vfill
-      {\large A thesis submitted in partial fulfillment for the \par}
-      {\large degree of Doctor of Philosophy \par}
-      \bigskip
-      \bigskip
-      {\large in the \par}
-      {\large \facname \par}
-      {\large \deptname \par}
-      \bigskip
-      \bigskip
-      \bigskip
-      {\Large \@date \par}
-      \bigskip
-    \end{center}
-    \par
-    \@thanks
-    \vfil\null
-  \end{titlepage}
-  \setcounter{footnote}{0}%
-  \cleardoublepage
-}
 
 \newcommand{\declarationpage}[0]{
   % Declaration Page required for the Thesis, your institution may give you a different text to place here

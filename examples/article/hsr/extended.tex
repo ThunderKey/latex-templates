@@ -17,31 +17,27 @@
 
 %% ----------------------------------------------------------------
 \begin{document}
+  % Set up the Title Page
+  \title  {Thesis Title}
+  \authors   {\texorpdfstring{\href{hans.muster@test.ch}{Author Name}}{Author Name}}
+  \addresses {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+  \date      {\today}
+  \subject   {}
+  \keywords  {}
 
-% Set up the Title Page
-\title  {Thesis Title}
-\authors    {\texorpdfstring{\href{hans.muster@test.ch}{Author Name}}{Author Name}}
-\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
-\date       {\today}
-\subject    {}
-\keywords   {}
+  \maketitle
+  %% ----------------------------------------------------------------
 
-\maketitle
-%% ----------------------------------------------------------------
+  \setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
 
-\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+  \begin{abstract}
+    The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+  \end{abstract}
 
-\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+  \clearpage
 
-\tableofcontentspage
+  \tableofcontentspage
 
-\pagestyle{fancy}  % Return the page headers back to the "fancy" style
-
-\abstract{
-  The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
-}
-
-\begin{multicols}{2}
   % Include the sections of the article, as separate files
   % Just uncomment the lines as you write the sections
 
@@ -59,24 +55,32 @@
 
   %\input{Sections/Section7} % Conclusion
 
-  \section{Introduction}
-  This is time for all good men to come to the aid of their party!
+  \begin{multicols}{2}[\section{Introduction}]
+    \label{introduction}
+    This is time for all good men to come to the aid of their party!
 
-  \subsection{Test Section}\label{test section}
-  \Blindtext
-  \Blindtext
-  \Blindtext
+    \subsection{Test Section}\label{test section}
+    \Blindtext
+    \Blindtext
+    \Blindtext
 
-  \subsubsection{Previous work}\label{previous work}
-  You might want to read more from Einstein~\cite{Einstein}.
+    \subsubsection{Previous work}\label{previous work}
+    You might want to read more from \citet{einstein}.
+    \vfill\null
+    \clearpage
+  \end{multicols}
 
-  \section{Results}\label{results}
-  In this section we describe the results.
-  \Blindtext
+  \begin{multicols}{2}[\section{Results}]
+    \label{results}
+    In this section we describe the results.
+    \Blindtext
+  \end{multicols}
 
-  \section{Conclusions}\label{conclusions}
-  We worked hard, and achieved very little.
-  \Blindtext
+  \begin{multicols}{2}[\section{Conclusions}]
+    \label{conclusions}
+    We worked hard, and achieved very little.
+    \Blindtext
+  \end{multicols}
 
   %% ----------------------------------------------------------------
   % Now begin the Appendices, including them as separate files
@@ -91,18 +95,16 @@
 
   %\input{Appendices/AppendixC} % Appendix Title
 
-  \section{An Appendix}
-  \Blindtext
+  \begin{multicols}{2}[\section{An Appendix}]
+    \label{an_appendix}
+    \Blindtext
+  \end{multicols}
 
   \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 
-\end{multicols}
+  %% ----------------------------------------------------------------
 
-%% ----------------------------------------------------------------
-
-\label{Bibliography}
-\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
-
-\end{document}  % The End
-%% ----------------------------------------------------------------
+  %\label{bibliography}
+  \bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+  \bibliography{sample}  % The references (bibliography) information are stored in the file named "sample.bib"
+\end{document}
