@@ -14,11 +14,8 @@ fi
 DIRECTORY="$(dirname "$FILE_NAME")"
 
 if [[ "$DIRECTORY" != "." ]]; then
-  if [[ "$TEXINPUTS" == "" ]]; then
-    export TEXINPUTS=".:$(pwd):$(kpsepath tex)"
-  else
-    export TEXINPUTS=".:$(pwd):$TEXINPUTS"
-  fi
+  source "$(pwd)/bin/setup_texinputs.sh"
+
   FILE_NAME="$(basename "$FILE_NAME")"
   cd "$DIRECTORY"
 fi
