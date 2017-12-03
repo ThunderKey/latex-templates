@@ -18,5 +18,10 @@
 
 \input{shared/hsr_variables}
 
+\titleaddition{
+  \vskip 1.5em
+  \def\svgwidth{\logowidth}
+  \input{shared/logo_hsr.pdf_tex}
+}
 %%%
 %%% End of file `article/HSR.cls'.

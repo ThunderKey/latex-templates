@@ -27,6 +27,9 @@
 
 \input{shared/setup_page}
 
+\newcommand{\titleaddition}[1]{\def\@titleaddition{#1}}
+\titleaddition{}
+
 % Title Page
 \def\@maketitle{%
   \hypersetup{pdftitle={\@title}}
@@ -46,8 +49,8 @@
         \authornames
       \end{tabular}\par}%
     \vskip 1em%
-    {\large \@date}%
+    {\large \@date}\par
+    \@titleaddition
   \end{center}%
-  \par
   \vskip 4em
 }
