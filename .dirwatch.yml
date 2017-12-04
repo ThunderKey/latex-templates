@@ -11,8 +11,8 @@ latex_thesis_simple:
   script:
     - ./bin/build_pdf.sh examples/thesis/hsr/simple
     - evince examples/thesis/hsr/simple.pdf &
-latex_report_extended:
+latex_article_extended:
   file_match: '*.{tex,bib,cls}'
   script:
-    - ./bin/build_pdf.sh examples/report/hsr/extended
-    - evince examples/report/hsr/extended.pdf &
+    - ./bin/build_pdf.sh examples/article/hsr/extended
+    - evince examples/article/hsr/extended.pdf &
