@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BIN_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 FILE_NAME="$1"
 if [[ "$FILE_NAME" == "" ]]; then
   echo "Usage: $0 FILE_NAME"
@@ -13,9 +15,9 @@ fi
 
 DIRECTORY="$(dirname "$FILE_NAME")"
 
-if [[ "$DIRECTORY" != "." ]]; then
-  source "$(pwd)/bin/setup_texinputs.sh"
+source "$BIN_DIRECTORY/setup_texinputs.sh"
 
+if [[ "$DIRECTORY" != "." ]]; then
   FILE_NAME="$(basename "$FILE_NAME")"
   cd "$DIRECTORY"
 fi
