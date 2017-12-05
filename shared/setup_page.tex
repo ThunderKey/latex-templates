@@ -268,34 +268,34 @@
 \renewcommand\tableofcontents{
   \btypeout{Table of Contents}
   \begin{spacing}{1}{
-      \setlength{\parskip}{1pt}
-      \if@twocolumn
-        \@restonecoltrue\onecolumn
-      \else
-        \@restonecolfalse
-      \fi
-      \chapterorsection{\contentsname
-          \@mkboth{
-            \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
-          \@starttoc{toc}
-      \if@restonecol\twocolumn\fi
+    \setlength{\parskip}{1pt}
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapterorsection{\contentsname
+      \@mkboth{
+        \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+      \@starttoc{toc}
+    \if@restonecol\twocolumn\fi
   }\end{spacing}
 }
 \renewcommand\listoffigures{
   \btypeout{List of Figures}
   \addtotoc{List of Figures}
   \begin{spacing}{1}{
-      \setlength{\parskip}{1pt}
-      \if@twocolumn
-        \@restonecoltrue\onecolumn
-      \else
-        \@restonecolfalse
-      \fi
-      \chapterorsection{\listfigurename
-        \@mkboth{\MakeUppercase\listfigurename}
-                {\MakeUppercase\listfigurename}}
-      \@starttoc{lof}
-      \if@restonecol\twocolumn\fi
+    \setlength{\parskip}{1pt}
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapterorsection{\listfigurename
+      \@mkboth{\MakeUppercase\listfigurename}
+              {\MakeUppercase\listfigurename}}
+    \@starttoc{lof}
+    \if@restonecol\twocolumn\fi
   }\end{spacing}
 }
 \renewcommand\listoftables{
