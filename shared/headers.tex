@@ -1,0 +1,23 @@
+\usepackage{fancyhdr}
+
+% Header helpers
+\newcommand{\leftheader}[1]{\def\leftheadervalue{#1}}
+\newcommand{\rightheader}[1]{\def\rightheadervalue{#1}}
+\newcommand{\centerheader}[1]{\def\centerheadervalue{#1}}
+\newcommand{\leftfooter}[1]{\def\leftfootervalue{#1}}
+\newcommand{\rightfooter}[1]{\def\rightfootervalue{#1}}
+\newcommand{\centerfooter}[1]{\def\centerfootervalue{#1}}
+
+\leftheader{\leftmark}
+\centerheader{}
+\rightheader{}
+\leftfooter{}
+\centerfooter{\thepage}
+\rightfooter{}
+
+\lhead[\rightheadervalue]{\leftheadervalue}
+\chead{\centerheadervalue}
+\rhead[\leftheadervalue]{\rightheadervalue}
+\lfoot[\rightfootervalue]{\leftfootervalue}
+\cfoot{\centerfootervalue}
+\rfoot[\leftfootervalue]{\rightfootervalue}
