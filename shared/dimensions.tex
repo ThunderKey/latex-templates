@@ -1,0 +1,20 @@
+\usepackage{calc}
+\newlength{\totalvoffset}
+\setlength{\totalvoffset}{1in}
+\newlength{\totalhoffset}
+\setlength{\totalhoffset}{1in}
+\setlength{\parindent}{2ex}
+\setlength{\parskip}{0pt}
+\setlength{\topmargin}{0pt}
+\setlength{\oddsidemargin}{0pt} % right margin (+ 1 inch)
+\setlength{\marginparwidth}{0.5in} % margin notes
+\setlength{\headheight}{0.3in}
+\setlength{\footskip}{0.5in}
+\newcommand{\updatetextdimensions}{
+  \setlength{\voffset}{\totalvoffset - 1in}
+  \setlength{\hoffset}{\totalhoffset - 1in}
+
+  \setlength{\textwidth}{\paperwidth - \totalhoffset -\oddsidemargin - \marginparsep - \marginparwidth - \totalhoffset}
+  \setlength{\textheight}{\paperheight - \totalvoffset - \topmargin - \headheight - \headsep - \footskip - \totalvoffset}
+}
+\updatetextdimensions

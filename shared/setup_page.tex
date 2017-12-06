@@ -10,19 +10,7 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\usepackage{calc}
-\setlength{\parindent}{2ex}
-\setlength{\parskip}{0pt}
-\setlength{\topmargin}{0pt}
-\setlength{\oddsidemargin}{0pt} % right margin (+ 1 inch)
-\setlength{\marginparwidth}{0.5in} % margin notes
-\setlength{\headheight}{0.3in}
-\setlength{\footskip}{0.5in}
-\newcommand{\updatetextdimensions}{
-  \setlength{\textwidth}{\paperwidth - \marginparwidth - 2in - \voffset - \voffset}
-  \setlength{\textheight}{\paperheight - \topmargin - 2in - \topmargin - \headheight - \headsep - \footskip - \hoffset - \hoffset}
-}
-\updatetextdimensions
+\input{shared/dimensions}
 
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
