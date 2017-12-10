@@ -16,8 +16,8 @@ LANG="$1"
 
 if [[ "$INTERACTIVE" == "true" ]]; then
   for f in $FILES; do
-    aspell check $f -t --encoding="utf-8" --lang="$LANG"
+    aspell check $f -t --home-dir="." --encoding="utf-8" --lang="$LANG"
   done
 else
-  cat $FILES | aspell list -t --encoding="utf-8" --lang="$LANG" | sort | uniq --count
+  cat $FILES | aspell list -t --home-dir="." --encoding="utf-8" --lang="$LANG" | sort | uniq --count
 fi
