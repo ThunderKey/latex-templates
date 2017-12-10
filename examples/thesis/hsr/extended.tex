@@ -120,6 +120,23 @@
     \Blindtext
   \end{multicols}
 
+  \begin{table}
+    \begin{center}
+      % l, c, r => left center right min space
+      % L, C, R => left center right max space
+      % one column left, 6 columns centered and the last right
+      \begin{tabularx}{0.75\textwidth}{ L | *{6}{c} r }
+        Team              & P & W & D & L & F  & A & Pts \\
+        \hline
+        Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+        Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+        Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+        FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+      \end{tabularx}
+      \caption{Test Table}
+    \end{center}
+  \end{table}
+
   %% ----------------------------------------------------------------
   % Now begin the Appendices, including them as separate files
 
