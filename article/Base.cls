@@ -4,8 +4,12 @@
 %%
 %% Created by Steve R. Gunn, modified by Sunil Patel: www.sunilpatel.co.uk
 
+\ifdefined\templatesfolder\else
+  \def\templatesfolder{latex-templates}
+\fi
+
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
-\ProvidesClass{article/Base}
+\ProvidesClass{\templatesfolder/article/Base}
               [2007/22/02 v1.0
    LaTeX document class]
 \def\baseclass{article}
@@ -25,7 +29,7 @@
 \ProcessOptions\relax
 \LoadClass{\baseclass}
 
-\input{shared/setup_page}
+\input{\templatesfolder/shared/setup_page}
 
 \newcommand{\titleaddition}[1]{\def\@titleaddition{#1}}
 \titleaddition{}

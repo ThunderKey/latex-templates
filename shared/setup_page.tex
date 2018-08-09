@@ -1,6 +1,6 @@
 \usepackage[utf8]{inputenc}
 
-\input{shared/tables.tex}
+\input{\templatesfolder/shared/tables.tex}
 
 \def\today{
   \ifcase\month\or
@@ -12,7 +12,7 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\input{shared/dimensions}
+\input{\templatesfolder/shared/dimensions}
 
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
@@ -22,7 +22,7 @@
 \clubpenalty=9999                 % Almost no orphans at top of page.
 \interfootnotelinepenalty=9999    % Almost never break footnotes.
 
-\input{shared/headers}
+\input{\templatesfolder/shared/headers}
 
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
@@ -74,8 +74,8 @@
   \let\\\space
 }
 
-\input{shared/variables}
+\input{\templatesfolder/shared/variables}
 
-\input{shared/special_pages}
+\input{\templatesfolder/shared/special_pages}
 
 \endinput

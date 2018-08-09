@@ -49,6 +49,6 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.33410928)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{shared/logo_hsr.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{\templatesfolder/shared/logo_hsr.pdf}}%
   \end{picture}%
 \endgroup%
